@@ -10,7 +10,7 @@
     "start": "prisma migrate deploy && node src/server.js",
     "seed": "node prisma/seed.js",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate": "prisma migrate dev && node prisma/seed.js",
     "seed:demo": "node scripts/seed-demo-data.js"
   },
   "prisma": {
