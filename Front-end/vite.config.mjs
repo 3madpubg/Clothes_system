@@ -11,9 +11,7 @@ export default defineConfig(() => {
     },
     css: {
       postcss: {
-        plugins: [
-          autoprefixer({}), // add options if needed
-        ],
+        plugins: [autoprefixer({})],
       },
     },
     plugins: [react()],
@@ -38,6 +36,13 @@ export default defineConfig(() => {
           changeOrigin: true,
         },
       },
+    },
+
+    // ← أضف ده
+    preview: {
+      host: '0.0.0.0',
+      port: process.env.PORT || 3000,
+      allowedHosts: 'all',
     },
   }
 })
