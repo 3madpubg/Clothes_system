@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: '/', // ← غيّر من './' لـ '/'
     build: {
       outDir: 'build',
     },
@@ -25,22 +25,17 @@ export default defineConfig(() => {
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.css'],
     },
     server: {
-      port: 3000,
+      host: '0.0.0.0', // ← أضف
+      port: process.env.PORT || 3000,
       proxy: {
         '/api': {
           target: process.env.VITE_API_URL || 'http://localhost:5000',
           changeOrigin: true,
         },
-        '/health': {
-          target: process.env.VITE_API_URL || 'http://localhost:5000',
-          changeOrigin: true,
-        },
       },
     },
-
-    // ← أضف ده
     preview: {
-      host: '0.0.0.0',
+      host: '0.0.0.0', // ← لازم يبقى 0.0.0.0 مش localhost
       port: process.env.PORT || 3000,
       allowedHosts: 'all',
     },
