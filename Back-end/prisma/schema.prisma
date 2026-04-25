@@ -1,0 +1,386 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//       المنتج العام (الموديل)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model Product {
+  id          Int      @id @default(autoincrement())
+  modelNumber String   @unique @map("model_number") // JK-001 رقم الموديل
+  name        String // جاكيت بامب
+  category    String // جاكيت , بنطلون , قميص ...
+  description String? // وصف اختياري
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  variants ProductVariant[]
+
+  @@map("products")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//     المنتج التفصيلي (الفاريانت)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model ProductVariant {
+  id            Int      @id @default(autoincrement())
+  product       Product  @relation(fields: [productId], references: [id])
+  productId     Int      @map("product_id")
+  size          String // M, L, XL, 32, 34 ...
+  color         String // أسود , أبيض , بيج ...
+  type          String // سليم , مقطع , واسع ...
+  purchasePrice Decimal  @map("purchase_price") @db.Decimal(10, 2)
+  sellingPrice  Decimal  @map("selling_price") @db.Decimal(10, 2)
+  stockQuantity Int      @default(0) @map("stock_quantity")
+  minStockAlert Int      @default(5) @map("min_stock_alert")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  purchaseItems PurchaseInvoiceItem[]
+  salesItems    SalesInvoiceItem[]
+
+  // التركيبة الفريدة = موديل + مقاس + لون + نوع
+  @@unique([productId, size, color, type])
+  @@map("product_variants")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//            الموردون
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model Supplier {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String?
+  address   String?
+  totalDebt Decimal  @default(0) @map("total_debt") @db.Decimal(10, 2)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  purchaseInvoices PurchaseInvoice[]
+  payments         SupplierPayment[]
+
+  @@map("suppliers")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//         فواتير الشراء
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model PurchaseInvoice {
+  id          Int         @id @default(autoincrement())
+  invoiceNo   String      @unique @map("invoice_no")
+  supplier    Supplier?   @relation(fields: [supplierId], references: [id])
+  supplierId  Int?        @map("supplier_id")
+  invoiceDate DateTime    @default(now()) @map("invoice_date")
+  totalAmount Decimal     @map("total_amount") @db.Decimal(10, 2)
+  paidAmount  Decimal     @default(0) @map("paid_amount") @db.Decimal(10, 2)
+  remaining   Decimal     @map("remaining") @db.Decimal(10, 2)
+  paymentType PaymentType @map("payment_type")
+  notes       String?
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  items    PurchaseInvoiceItem[]
+  payments SupplierPayment[]
+
+  @@map("purchase_invoices")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//      تفاصيل فاتورة الشراء
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model PurchaseInvoiceItem {
+  id        Int             @id @default(autoincrement())
+  invoice   PurchaseInvoice @relation(fields: [invoiceId], references: [id])
+  invoiceId Int             @map("invoice_id")
+  variant   ProductVariant  @relation(fields: [variantId], references: [id])
+  variantId Int             @map("variant_id")
+  quantity  Int
+  unitPrice Decimal         @map("unit_price") @db.Decimal(10, 2)
+  total     Decimal         @db.Decimal(10, 2)
+
+  @@map("purchase_invoice_items")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//       مدفوعات الموردين
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model SupplierPayment {
+  id          Int             @id @default(autoincrement())
+  supplier    Supplier        @relation(fields: [supplierId], references: [id])
+  supplierId  Int             @map("supplier_id")
+  invoice     PurchaseInvoice @relation(fields: [invoiceId], references: [id])
+  invoiceId   Int             @map("invoice_id")
+  amount      Decimal         @db.Decimal(10, 2)
+  paymentDate DateTime        @default(now()) @map("payment_date")
+  notes       String?
+
+  @@map("supplier_payments")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//            العملاء
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model Customer {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String?
+  address   String?
+  totalDebt Decimal  @default(0) @map("total_debt") @db.Decimal(10, 2)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  salesInvoices SalesInvoice[]
+  payments      CustomerPayment[]
+
+  @@map("customers")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//          فواتير البيع
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model SalesInvoice {
+  id          Int         @id @default(autoincrement())
+  invoiceNo   String      @unique @map("invoice_no")
+  customer    Customer?   @relation(fields: [customerId], references: [id])
+  customerId  Int?        @map("customer_id")
+  invoiceDate DateTime    @default(now()) @map("invoice_date")
+  totalAmount Decimal     @map("total_amount") @db.Decimal(10, 2)
+  discount    Decimal     @default(0) @db.Decimal(10, 2)
+  paidAmount  Decimal     @default(0) @map("paid_amount") @db.Decimal(10, 2)
+  remaining   Decimal     @map("remaining") @db.Decimal(10, 2)
+  paymentType PaymentType @map("payment_type")
+  notes       String?
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  items    SalesInvoiceItem[]
+  payments CustomerPayment[]
+
+  @@map("sales_invoices")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//       تفاصيل فاتورة البيع
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model SalesInvoiceItem {
+  id        Int            @id @default(autoincrement())
+  invoice   SalesInvoice   @relation(fields: [invoiceId], references: [id])
+  invoiceId Int            @map("invoice_id")
+  variant   ProductVariant @relation(fields: [variantId], references: [id])
+  variantId Int            @map("variant_id")
+  quantity  Int
+  unitPrice Decimal        @map("unit_price") @db.Decimal(10, 2)
+  total     Decimal        @db.Decimal(10, 2)
+
+  @@map("sales_invoice_items")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//        مدفوعات العملاء
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model CustomerPayment {
+  id          Int          @id @default(autoincrement())
+  customer    Customer     @relation(fields: [customerId], references: [id])
+  customerId  Int          @map("customer_id")
+  invoice     SalesInvoice @relation(fields: [invoiceId], references: [id])
+  invoiceId   Int          @map("invoice_id")
+  amount      Decimal      @db.Decimal(10, 2)
+  paymentDate DateTime     @default(now()) @map("payment_date")
+  notes       String?
+
+  @@map("customer_payments")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//            Users
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  username  String    @unique
+  password  String // bcrypt hashed
+  role      Role      @default(CASHIER)
+  isActive  Boolean   @default(true) @map("is_active")
+  lastLogin DateTime? @map("last_login")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  refreshTokens RefreshToken[]
+  auditLogs     AuditLog[]
+  employee      Employee?
+
+  @@map("users")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//         Refresh Tokens
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("refresh_tokens")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//          Audit Logs
+//  كل عملية بتتسجل مين عملها وامتى
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @map("user_id")
+  action    String // CREATE_SALE, DELETE_PRODUCT, LOGIN...
+  entity    String // Sale, Product, User...
+  entityId  Int?     @map("entity_id")
+  oldData   Json?    @map("old_data") // البيانات قبل التعديل
+  newData   Json?    @map("new_data") // البيانات بعد التعديل
+  ipAddress String?  @map("ip_address")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("audit_logs")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//           الموظفين
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model Employee {
+  id         Int      @id @default(autoincrement())
+  name       String
+  phone      String?
+  nationalId String?  @unique @map("national_id")
+  jobTitle   String   @map("job_title") // كاشير، أمين مخزن، بائع...
+  baseSalary Decimal  @map("base_salary") @db.Decimal(10, 2)
+  hireDate   DateTime @map("hire_date")
+  isActive   Boolean  @default(true) @map("is_active")
+  notes      String?
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  // ربط بيوزر في النظام (اختياري)
+  userId Int?  @unique @map("user_id")
+  user   User? @relation(fields: [userId], references: [id])
+
+  salaries MonthlySalary[]
+  advances EmployeeAdvance[]
+
+  @@map("employees")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//       المرتبات الشهرية
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model MonthlySalary {
+  id         Int      @id @default(autoincrement())
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  employeeId Int      @map("employee_id")
+  month      Int // 1-12
+  year       Int
+  baseSalary Decimal  @map("base_salary") @db.Decimal(10, 2)
+
+  // إضافات
+  bonus       Decimal @default(0) @db.Decimal(10, 2) // بونص
+  overtimePay Decimal @default(0) @map("overtime_pay") @db.Decimal(10, 2) // أوفر تايم
+
+  // خصومات
+  advances      Decimal @default(0) @db.Decimal(10, 2) // إجمالي السلف (أوتوماتيك)
+  absenceDays   Int     @default(0) @map("absence_days") // أيام الغياب
+  absenceDeduct Decimal @default(0) @map("absence_deduct") @db.Decimal(10, 2) // خصم الغياب
+  penalties     Decimal @default(0) @db.Decimal(10, 2) // جزاءات
+
+  // الصافي (بيتحسب أوتوماتيك)
+  netSalary Decimal @map("net_salary") @db.Decimal(10, 2)
+  // netSalary = baseSalary + bonus + overtimePay - advances - absenceDeduct - penalties
+
+  status    SalaryStatus @default(PENDING)
+  paidAt    DateTime?    @map("paid_at")
+  notes     String?
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+  @@unique([employeeId, month, year]) // مرتب واحد بس لكل موظف في الشهر
+  @@map("monthly_salaries")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//          سلف الموظفين
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model EmployeeAdvance {
+  id         Int      @id @default(autoincrement())
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  employeeId Int      @map("employee_id")
+  amount     Decimal  @db.Decimal(10, 2)
+  date       DateTime @default(now())
+  month      Int // هتخصم من مرتب أنهي شهر
+  year       Int
+  isDeducted Boolean  @default(false) @map("is_deducted") // اتخصمت من المرتب؟
+  notes      String?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  // ربط بمصروف اليوم
+  expenseId Int?          @unique @map("expense_id")
+  expense   DailyExpense? @relation(fields: [expenseId], references: [id])
+
+  @@map("employee_advances")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//       أنواع المصاريف
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model ExpenseCategory {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique // "سلفة موظف", "إيجار", "كهرباء"
+  isAdvance Boolean  @default(false) @map("is_advance") // هل دي سلفة موظف؟
+  createdAt DateTime @default(now()) @map("created_at")
+
+  expenses DailyExpense[]
+
+  @@map("expense_categories")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//        المصاريف اليومية
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+model DailyExpense {
+  id         Int             @id @default(autoincrement())
+  category   ExpenseCategory @relation(fields: [categoryId], references: [id])
+  categoryId Int             @map("category_id")
+  amount     Decimal         @db.Decimal(10, 2)
+  date       DateTime        @default(now())
+  notes      String?
+  createdAt  DateTime        @default(now()) @map("created_at")
+  updatedAt  DateTime        @updatedAt @map("updated_at")
+
+  // لو المصروف سلفة موظف
+  advance EmployeeAdvance?
+
+  @@map("daily_expenses")
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//             Enums
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+enum SalaryStatus {
+  PENDING // لسه متدفعتش
+  PAID // اتدفعت
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  CASHIER
+  STOCKIST
+}
+
+enum PaymentType {
+  CASH
+  CREDIT
+}

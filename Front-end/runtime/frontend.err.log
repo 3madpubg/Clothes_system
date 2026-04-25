@@ -1,0 +1,108 @@
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/api/shopApi.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/api/shopApi.js) in D:/coreui-free-react-admin-template-main/Front-end/src/views/dashboard/Dashboard.jsx. Does the file exist?
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/shop/Customers.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/dashboard/Dashboard.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/shop/Reports.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/shop/InvoiceDetails.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/shop/Purchases.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/shop/Suppliers.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:21:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/views/dashboard/Dashboard.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/routes.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/routes.js) in D:/coreui-free-react-admin-template-main/Front-end/src/components/AppBreadcrumb.jsx. Does the file exist?
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/routes.js (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/routes.js) in D:/coreui-free-react-admin-template-main/Front-end/src/components/AppBreadcrumb.jsx. Does the file exist?
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppBreadcrumb.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppContent.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppContent.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:28:53 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppBreadcrumb.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:29:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/_nav.jsx (resolved id: D:/coreui-free-react-admin-template-main/Front-end/src/_nav.jsx) in D:/coreui-free-react-admin-template-main/Front-end/src/components/AppSidebar.jsx. Does the file exist?
+[2m7:29:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppSidebar.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:29:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/AppSidebar.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m7:36:10 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/employees[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:13 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/dashboard[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:13 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/stock[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:13 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/profit[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:18 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/products[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:19 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/dashboard[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:19 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/stock[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m7:36:19 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/reports/profit[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m8:14:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2m8:14:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2m8:14:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of null (reading 'useState')
+[39m > exports.useState ../../node_modules/.vite/deps/react.js?v=fe519b28:748:30
+ > useColorModes ../../node_modules/.vite/deps/@coreui_react.js?v=3036c484:7432:62
+ > App src/App.jsx?t=1777137256126:64:43
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:25904:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:7662:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10166:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:11778:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:17641:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:17469:40
+
+[2m8:14:16 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mAn error occurred in the <App> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+[2m8:14:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2m8:14:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2m8:14:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of null (reading 'useState')
+[39m > exports.useState ../../node_modules/.vite/deps/react.js?v=fe519b28:748:30
+ > useColorModes ../../node_modules/.vite/deps/@coreui_react.js?v=3036c484:7432:62
+ > App src/App.jsx?t=1777137271502:64:43
+ > Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:25904:19
+ > renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:7662:21
+ > updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:10166:18
+ > beginWork node_modules/react-dom/cjs/react-dom-client.development.js:11778:17
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:871:29
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:17641:21
+ > workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:17469:40
+
+[2m8:14:31 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mAn error occurred in the <App> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+

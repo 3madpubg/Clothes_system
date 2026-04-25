@@ -1,0 +1,70 @@
+.app-header-toggler {
+  margin-inline-start: -14px;
+}
+
+.main-chart {
+  height: 300px;
+  margin-top: 40px;
+}
+
+.dashboard-profit-chart {
+  height: 320px;
+}
+
+.widget-mini-chart {
+  width: 80px;
+  height: 40px;
+}
+
+.widget-dropdown-chart {
+  height: 70px;
+}
+
+.widget-brand-facebook {
+  --cui-card-cap-bg: #3b5998;
+}
+
+.widget-brand-twitter {
+  --cui-card-cap-bg: #00aced;
+}
+
+.widget-brand-linkedin {
+  --cui-card-cap-bg: #4875b4;
+}
+
+.login-register-card {
+  width: 44%;
+}
+
+.example-card-width,
+.placeholder-card-width {
+  width: 18rem;
+}
+
+.collapse-horizontal-frame {
+  min-height: 120px;
+}
+
+.collapse-horizontal-card {
+  width: 300px;
+}
+
+.theme-color-swatch {
+  padding-top: 75%;
+}
+
+.floating-textarea-tall {
+  height: 100px;
+}
+
+.placeholder-width-30 {
+  width: 30%;
+}
+
+.brand-logo-accent {
+  fill: #80d0ff;
+}
+
+.brand-logo-current {
+  fill: currentColor;
+}

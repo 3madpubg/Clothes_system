@@ -1,0 +1,143 @@
+[2m3:43:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./pages/Products" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/App.jsx[39m:4:21
+[33m  2  |  import Layout from "./components/Layout/Layout";
+  3  |  import Dashboard from "./pages/Dashboard";
+  4  |  import Products from "./pages/Products";
+     |                        ^
+  5  |  import Suppliers from "./pages/Suppliers";
+  6  |  import Purchases from "./pages/Purchases";[39m
+[2m3:43:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./pages/Products" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/App.jsx[39m:4:21
+[33m  2  |  import Layout from "./components/Layout/Layout";
+  3  |  import Dashboard from "./pages/Dashboard";
+  4  |  import Products from "./pages/Products";
+     |                        ^
+  5  |  import Suppliers from "./pages/Suppliers";
+  6  |  import Purchases from "./pages/Purchases";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Dashboard.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Dashboard.jsx[39m:2:27
+[33m  1  |  import { useQuery } from "@tanstack/react-query";
+  2  |  import { reportsApi } from "../api";
+     |                              ^
+  3  |  import { StatCard } from "../components/UI/Card";
+  4  |  import { TrendingUp, TrendingDown, Package, AlertTriangle, Receipt, ShoppingCart } from "lucide-react";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Dashboard.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Dashboard.jsx[39m:2:27
+[33m  1  |  import { useQuery } from "@tanstack/react-query";
+  2  |  import { reportsApi } from "../api";
+     |                              ^
+  3  |  import { StatCard } from "../components/UI/Card";
+  4  |  import { TrendingUp, TrendingDown, Package, AlertTriangle, Receipt, ShoppingCart } from "lucide-react";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Products.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Products.jsx[39m:6:28
+[33m  4  |  import toast from "react-hot-toast";
+  5  |  import { Plus, ChevronDown, ChevronUp } from "lucide-react";
+  6  |  import { productsApi } from "../api";
+     |                               ^
+  7  |  import { Table } from "../components/UI/Table";
+  8  |  import { Modal } from "../components/UI/Modal";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Products.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Products.jsx[39m:6:28
+[33m  4  |  import toast from "react-hot-toast";
+  5  |  import { Plus, ChevronDown, ChevronUp } from "lucide-react";
+  6  |  import { productsApi } from "../api";
+     |                               ^
+  7  |  import { Table } from "../components/UI/Table";
+  8  |  import { Modal } from "../components/UI/Modal";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Suppliers.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Suppliers.jsx[39m:7:22
+[33m  5  |  import { Plus } from "lucide-react";
+  6  |  import { suppliersApi, paymentsApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Suppliers.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Suppliers.jsx[39m:7:22
+[33m  5  |  import { Plus } from "lucide-react";
+  6  |  import { suppliersApi, paymentsApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Purchases.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Purchases.jsx[39m:7:22
+[33m  5  |  import { Plus, Trash2 } from "lucide-react";
+  6  |  import { purchasesApi, suppliersApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Purchases.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Purchases.jsx[39m:7:22
+[33m  5  |  import { Plus, Trash2 } from "lucide-react";
+  6  |  import { purchasesApi, suppliersApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Customers.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Customers.jsx[39m:7:22
+[33m  5  |  import { Plus, ChevronDown, ChevronUp } from "lucide-react";
+  6  |  import { customersApi, paymentsApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../components/UI/Modal" from "src/components/pages/Customers.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Customers.jsx[39m:7:22
+[33m  5  |  import { Plus, ChevronDown, ChevronUp } from "lucide-react";
+  6  |  import { customersApi, paymentsApi } from "../api";
+  7  |  import { Modal } from "../components/UI/Modal";
+     |                         ^
+  8  |  import { Button } from "../components/UI/Button";
+  9  |  import { Input } from "../components/UI/Input";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Reports.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Reports.jsx[39m:3:27
+[33m  1  |  import { useState } from "react";
+  2  |  import { useQuery } from "@tanstack/react-query";
+  3  |  import { reportsApi } from "../api";
+     |                              ^
+  4  |  import { Badge } from "../components/UI/Badge";
+  5  |  var _jsxFileName = "D:/Clothes shop/shop-system/frontend/src/components/pages/Reports.jsx";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Reports.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Reports.jsx[39m:3:27
+[33m  1  |  import { useState } from "react";
+  2  |  import { useQuery } from "@tanstack/react-query";
+  3  |  import { reportsApi } from "../api";
+     |                              ^
+  4  |  import { Badge } from "../components/UI/Badge";
+  5  |  var _jsxFileName = "D:/Clothes shop/shop-system/frontend/src/components/pages/Reports.jsx";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Sales.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Sales.jsx[39m:6:52
+[33m  4  |  import toast from "react-hot-toast";
+  5  |  import { Plus, Trash2, Search } from "lucide-react";
+  6  |  import { salesApi, customersApi, productsApi } from "../api";
+     |                                                       ^
+  7  |  import { Modal } from "../components/UI/Modal";
+  8  |  import { Button } from "../components/UI/Button";[39m
+[2m3:43:32 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "../api" from "src/components/pages/Sales.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Clothes shop/shop-system/frontend/src/components/pages/Sales.jsx[39m:6:52
+[33m  4  |  import toast from "react-hot-toast";
+  5  |  import { Plus, Trash2, Search } from "lucide-react";
+  6  |  import { salesApi, customersApi, productsApi } from "../api";
+     |                                                       ^
+  7  |  import { Modal } from "../components/UI/Modal";
+  8  |  import { Button } from "../components/UI/Button";[39m
+^C

@@ -1,0 +1,6 @@
+
+> shop-system-backend@1.0.0 start
+> node src/server.js
+
+◇ injected env (4) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+Shop system backend is running on port 5000
