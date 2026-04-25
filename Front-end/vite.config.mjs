@@ -37,7 +37,7 @@ export default defineConfig(() => {
     preview: {
       host: '0.0.0.0', // ← لازم يبقى 0.0.0.0 مش localhost
       port: process.env.PORT || 3000,
-      allowedHosts: 'all',
+      allowedHosts: 'clothesfront.up.railway.app',
     },
   }
 })
