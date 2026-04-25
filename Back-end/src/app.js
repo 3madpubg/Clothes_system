@@ -26,8 +26,6 @@ const allowedOrigins = (process.env.CORS_ORIGIN || "")
   .map((origin) => origin.trim())
   .filter(Boolean);
 
-const cors = require("cors");
-
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || "*",
