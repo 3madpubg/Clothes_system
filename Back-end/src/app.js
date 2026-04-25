@@ -28,8 +28,7 @@ const allowedOrigins = (process.env.CORS_ORIGIN || "")
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "*",
-    credentials: true,
+    origin: "*", // مؤقتاً عشان نتأكد
   }),
 );
 app.use(express.json());
