@@ -68,3 +68,8 @@
 .brand-logo-current {
   fill: currentColor;
 }
+@media (max-width: 768px) {
+  .login-register-card {
+    width: 100%;
+  }
+}
