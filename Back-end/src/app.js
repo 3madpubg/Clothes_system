@@ -26,19 +26,12 @@ const allowedOrigins = (process.env.CORS_ORIGIN || "")
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+const cors = require("cors");
+
 app.use(
   cors({
-    origin(origin, callback) {
-      if (
-        !origin ||
-        allowedOrigins.length === 0 ||
-        allowedOrigins.includes(origin)
-      ) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("Origin not allowed by CORS"));
-    },
+    origin: process.env.FRONTEND_URL || "*",
+    credentials: true,
   }),
 );
 app.use(express.json());
